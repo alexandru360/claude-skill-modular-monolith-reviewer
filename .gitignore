@@ -1,0 +1,48 @@
+# Build artifacts
+bin/
+obj/
+dist/
+*.dll
+*.exe
+*.so
+*.dylib
+*.o
+*.a
+*.lib
+
+# IDE
+.vscode/
+.idea/
+*.sln.iml
+*.user
+*.suo
+*.sln.user
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Dependencies
+node_modules/
+packages/
+
+# Test coverage
+coverage/
+*.trx
+TestResults/
+
+# Local settings
+appsettings.local.json
+.env.local
+
+# Temporary files
+*.tmp
+*.temp
+*~
+*.swp
+*.swo
+
+# Build-specific
+.build/
+.nuget/

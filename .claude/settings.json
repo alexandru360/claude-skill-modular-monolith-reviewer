@@ -1,0 +1,30 @@
+{
+  "env": {
+    "NO_COLOR": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git reset *)",
+      "Bash(git revert *)",
+      "Bash(git rm *)",
+      "Bash(git checkout *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Write(./dist/**)",
+      "Write(./node_modules/**)"
+    ]
+  },
+  "enabledMcpjsonServers": ["DevExplorer", "Figma"],
+  "extraKnownMarketplaces": {
+    "community-skills": {
+      "source": {
+        "source": "github",
+        "repo": "LEGO/community-skills"
+      }
+    }
+  }
+}

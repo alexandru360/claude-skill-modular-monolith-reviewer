@@ -1,0 +1,116 @@
+# Release Notes
+
+## v1.4.0 (2026-06-18)
+
+### New Skills
+
+- **r3-reactive-extensions** - Added a progressive-disclosure skill for [Cysharp's R3](https://github.com/Cysharp/R3), the modern reimplementation of Reactive Extensions for .NET. Covers the `Observable<T>`/`Observer<T>` model and the `OnErrorResume` error contract (errors don't terminate subscriptions), `TimeProvider`/`FrameProvider` in place of `IScheduler`, and subscription-leak tracking. Sibling reference files cover R3-vs-Rx.NET differences and a 10-step migration checklist (operator renames such as `Throttle`→`Debounce`, `Sample`→`ThrottleLast`, `Buffer`→`Chunk`), async dispatch via the `AwaitOperation` enum with `Task` and `IAsyncEnumerable` integration plus MVVM lifecycle patterns, and the concurrent-update serialization contract with deterministic testing via `FakeTimeProvider`/`FakeFrameProvider`. Every behavioral and API claim was verified against R3 1.3.1 with runnable proofs of concept. ([#67](https://github.com/Aaronontheweb/dotnet-skills/pull/67))
+
+### Agent Enhancements
+
+- **roslyn-incremental-generator-specialist: mutable vs immutable collections** - Added guidance distinguishing internal parser/utility construction from pipeline-facing specs when choosing collections. Mutable collections (`HashSet<T>`, `List<T>`, `Dictionary<TKey,TValue>`) are preferred for temporary work that re-executes on every file change, while immutable equatable forms (`ImmutableEquatableArray<T>`, `ImmutableHashSet<T>`, `ImmutableArray<T>`) are reserved for the incremental-pipeline boundary where the engine caches and compares model snapshots. Includes benchmark-backed rationale (`ImmutableHashSet.Builder.Add` is roughly 1.4–3× slower than `HashSet.Add`) and a token-efficiency pass that trimmed the agent from 511 to 475 lines with no loss of actionable guidance. ([#66](https://github.com/Aaronontheweb/dotnet-skills/pull/66))
+
+### Issues Fixed
+
+- [#67](https://github.com/Aaronontheweb/dotnet-skills/pull/67) - Add R3 reactive extensions skill
+- [#66](https://github.com/Aaronontheweb/dotnet-skills/pull/66) - Roslyn agent: mutable vs immutable collection guidance & token-efficiency pass
+
+---
+
+## v1.3.2 (2026-04-15)
+
+### Skill Enhancements
+
+- **csharp-coding-standards: constraint-enforcing value objects** - Added new section on value objects that enforce domain constraints beyond identifiers, including `AbsoluteUrl` (with Linux `Uri.TryCreate` gotcha), `NonEmptyString`, `EmailAddress`, `PositiveAmount`, and `TypeConverter` support for `IOptions<T>` configuration binding. ([#60](https://github.com/Aaronontheweb/dotnet-skills/pull/60), fixes [#43](https://github.com/Aaronontheweb/dotnet-skills/issues/43))
+
+- **csharp-coding-standards: simplified Result type pattern** - Replaced over-engineered generic `Result<T, TError>` with domain-specific sealed record pattern using `IsSuccess` boolean, factory methods, and enum error codes. Matches real-world C# idioms instead of F#-style railway-oriented programming. ([#58](https://github.com/Aaronontheweb/dotnet-skills/pull/58), fixes [#57](https://github.com/Aaronontheweb/dotnet-skills/issues/57))
+
+### Bug Fixes
+
+- **csharp-api-design: binary compatibility correction** - Fixed incorrect guidance that listed adding optional parameters to existing methods as a safe change. This is binary incompatible — the IL method signature changes and callers compiled against the old signature get `MissingMethodException` at runtime. Corrected to show adding new overload methods instead. ([#59](https://github.com/Aaronontheweb/dotnet-skills/pull/59), fixes [#56](https://github.com/Aaronontheweb/dotnet-skills/issues/56))
+
+### Issues Fixed
+
+- [#43](https://github.com/Aaronontheweb/dotnet-skills/issues/43) - Enhance value object skill: constraint enforcement beyond identifiers
+- [#56](https://github.com/Aaronontheweb/dotnet-skills/issues/56) - C# API design error: adding optional parameters to an existing method is not binary compatible
+- [#57](https://github.com/Aaronontheweb/dotnet-skills/issues/57) - C# coding standards: example result pattern is over-engineered
+
+---
+
+## v1.3.1 (2026-04-10)
+
+### New Skills
+
+- **opentelemetry-dotnet-instrumentation** - Added skill for implementing OpenTelemetry instrumentation in .NET codebases, covering tracing (Activities/Spans), metrics, naming conventions, error handling, performance, and API design best practices. ([#52](https://github.com/Aaronontheweb/dotnet-skills/pull/52))
+
+### Agent Enhancements
+
+- **dotnet-performance-analyst** - Enhanced performance analysis with delegate allocation insights, including guidance on identifying hot-path delegate allocations, closure allocations, method-group allocations, and proactive review strategies. ([#50](https://github.com/Aaronontheweb/dotnet-skills/pull/50))
+
+### Skill Enhancements
+
+- **Progressive disclosure reformatting** - Reformatted 9 oversized skills to use progressive disclosure patterns, splitting large reference documents into focused primary files with supplementary deep-dive files. Affected skills: `akka-best-practices`, `akka-management`, `akka-testing-patterns`, `aspire-integration-testing`, `csharp-coding-standards`, `csharp-concurrency-patterns`, `microsoft-extensions-configuration`, `microsoft-extensions-dependency-injection`, and `testcontainers`. ([#48](https://github.com/Aaronontheweb/dotnet-skills/pull/48))
+
+---
+
+## v1.3.0 (2026-02-19)
+
+### New Skills
+
+- **ilspy-decompile** - Added skill for decompiling .NET assemblies with ILSpy, including prerequisites, quick start guide, common assembly locations, core workflow, and decompilation commands. ([#45](https://github.com/Aaronontheweb/dotnet-skills/pull/45))
+
+- **dotnet-devcert-trust** - Added skill for diagnosing and resolving HTTPS dev certificate trust failures on Linux. Covers the full 5-point diagnostic procedure, recovery workflow, distro-specific guidance (Ubuntu, Fedora, Arch, WSL2), and Aspire 13.1.0+ Redis TLS context. ([#44](https://github.com/Aaronontheweb/dotnet-skills/pull/44))
+
+### New Agents
+
+- **Roslyn Incremental Generator Specialist** - Added agent documenting the role and design principles for Roslyn incremental source generator development, including guidelines for maintainability and performance. ([#46](https://github.com/Aaronontheweb/dotnet-skills/pull/46))
+
+### Skill Enhancements
+
+- **BenchmarkDotNet guidelines** - Clarified correct usage of `[Benchmark(Baseline = true)]`: only one benchmark per category group may use `Baseline = true`. Documents the recommended pattern of using `[GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]` with `[CategoriesColumn]` to compare multiple implementations across scenarios. ([#41](https://github.com/Aaronontheweb/dotnet-skills/pull/41))
+
+### Bug Fixes
+
+- **OpenCode install script** - Fixed the OpenCode installation script to extract skill directory names from YAML frontmatter (`name` field in SKILL.md) rather than the filesystem directory name. OpenCode requires directory names to match the frontmatter `name` field (e.g., `akka-net-best-practices` rather than `akka-best-practices`). ([#40](https://github.com/Aaronontheweb/dotnet-skills/pull/40))
+
+- **Index generation script** - Fixed `generate-skill-index-snippets.sh` to use `python3` instead of `python`, resolving failures on systems where `python` is not in PATH or resolves to Python 2.
+
+---
+
+## v1.2.0 (2026-02-05)
+
+### Breaking Changes
+
+- **Flattened skills directory structure** - Skills moved from `skills/category/skill-name/` to `skills/skill-name/` for GitHub Copilot plugin compatibility. Framework-specific skills use prefixes (`akka-*`, `aspire-*`, `csharp-*`, `microsoft-extensions-*`, `playwright-*`). General .NET skills have no prefix. ([#34](https://github.com/Aaronontheweb/dotnet-skills/pull/34))
+
+### Documentation Improvements
+
+- **Clarified installation instructions** - Added platform-specific installation sections for Claude Code CLI, GitHub Copilot, and OpenCode. Clarified that `/plugin` commands run in Claude Code CLI, not the VSCode extension. Updated repository structure documentation for the new flat skills layout. ([#35](https://github.com/Aaronontheweb/dotnet-skills/pull/35), fixes [#32](https://github.com/Aaronontheweb/dotnet-skills/issues/32))
+
+### Skill Enhancements
+
+- **Akka.NET best practices** - Added actor logging guidance using `ILoggingAdapter` from `Context.GetLogger()` instead of DI-injected `ILogger<T>`, including semantic logging support in v1.5.59+. Added guidance on managing async operations with `CancellationToken` - actor-scoped CancellationTokenSource in PostStop(), linked CTS for per-operation timeouts, and graceful shutdown handling. ([#36](https://github.com/Aaronontheweb/dotnet-skills/pull/36), fixes [#29](https://github.com/Aaronontheweb/dotnet-skills/issues/29), [#31](https://github.com/Aaronontheweb/dotnet-skills/issues/31))
+
+- **C# concurrency patterns** - Added guidance to prefer async local functions over `Task.Run(async () => ...)` and `ContinueWith()` for better stack traces, cleaner exception handling, and self-documenting code. Includes Akka.NET PipeTo example. ([#37](https://github.com/Aaronontheweb/dotnet-skills/pull/37), fixes [#30](https://github.com/Aaronontheweb/dotnet-skills/issues/30))
+
+- **CRAP analysis** - Added exclusions for Blazor generated code (`*.razor.g.cs`, `*.razor.css.g.cs`), EF Core migrations (`**/Migrations/**/*`), and `ExcludeFromCodeCoverageAttribute` to the coverage configuration guidance. ([#38](https://github.com/Aaronontheweb/dotnet-skills/pull/38), fixes [#6](https://github.com/Aaronontheweb/dotnet-skills/issues/6))
+
+### Issues Fixed
+
+- [#6](https://github.com/Aaronontheweb/dotnet-skills/issues/6) - Update crap-analysis skill to exclude generated code by default
+- [#29](https://github.com/Aaronontheweb/dotnet-skills/issues/29) - Add actor logging guidance to akka-net-best-practices skill
+- [#30](https://github.com/Aaronontheweb/dotnet-skills/issues/30) - Add guidance on async local functions vs Task.Run/ContinueWith
+- [#31](https://github.com/Aaronontheweb/dotnet-skills/issues/31) - Add guidance on cancellation tokens for long-running async operations in actors
+- [#32](https://github.com/Aaronontheweb/dotnet-skills/issues/32) - Please clarify the install instructions
+
+---
+
+## v1.1.0 (2026-02-01)
+
+Initial marketplace release with 30 skills and 5 agents covering the .NET ecosystem.
+
+See [GitHub Release v1.1.0](https://github.com/Aaronontheweb/dotnet-skills/releases/tag/v1.1.0) for full details.
+
+## v1.0.0 (2026-01-28)
+
+Initial release.

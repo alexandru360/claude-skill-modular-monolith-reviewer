@@ -1,0 +1,14 @@
+[submodule "lib/claude-git-pr-skill"]
+	path = lib/claude-git-pr-skill
+	url = https://github.com/aidankinzett/claude-git-pr-skill.git
+	branch = main
+
+[submodule "lib/dotnet-skills"]
+	path = lib/dotnet-skills
+	url = https://github.com/Aaronontheweb/dotnet-skills.git
+	branch = main
+
+[submodule "lib/code-review-skill"]
+	path = lib/code-review-skill
+	url = https://github.com/awesome-skills/code-review-skill.git
+	branch = main
