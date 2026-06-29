@@ -25,6 +25,12 @@
         "source": "github",
         "repo": "LEGO/community-skills"
       }
+    },
+    "dotnet-skills": {
+      "source": {
+        "source": "directory",
+        "path": "./lib/dotnet-skills"
+      }
     }
   }
 }
