@@ -1,8 +1,8 @@
-# ✅ pbi-dotnet-modular-monolith Skill Created
+# ✅ skill-dotnet-modular-monolith Skill Created
 
 ## Summary
 
-A complete **Claude skill repository** has been created for `/pbi-dotnet-modular-monolith` — a universal .NET architecture standard for building clean, modular ASP.NET Core 10 projects with DDD patterns and strict quality rules.
+A complete **Claude skill repository** has been created for `/skill-dotnet-modular-monolith` — a universal .NET architecture standard for building clean, modular ASP.NET Core 10 projects with DDD patterns and strict quality rules.
 
 **Repository Location**: `c:\Dev\_skills\_bi-layouting-engine`
 
@@ -15,7 +15,7 @@ A complete **Claude skill repository** has been created for `/pbi-dotnet-modular
 | File | Purpose |
 |------|---------|
 | **README.md** | Comprehensive skill overview and feature list |
-| **pbi-dotnet-modular-monolith.md** | Skill definition for Claude Code (invoke with `/pbi-dotnet-modular-monolith`) |
+| **skill-dotnet-modular-monolith.md** | Skill definition for Claude Code (invoke with `/skill-dotnet-modular-monolith`) |
 | **SETUP.md** | Repository setup and management guide |
 | **CLAUDE.md** | Project standards (existing, referenced by skill) |
 | **.gitmodules** | Configuration for 3 git submodule dependencies |
@@ -68,7 +68,7 @@ These are **referenced, not duplicated** — keeping the repository clean and ma
 ```
 c:\Dev\_skills\_bi-layouting-engine\
 ├── README.md                      ← Start here
-├── pbi-dotnet-modular-monolith.md ← Skill definition
+├── skill-dotnet-modular-monolith.md ← Skill definition
 ├── SETUP.md                       ← Clone & manage submodules
 ├── CLAUDE.md                      ← Project standards
 ├── .gitmodules                    ← Submodule configuration
@@ -95,7 +95,7 @@ c:\Dev\_skills\_bi-layouting-engine\
 
 Invoke directly:
 ```
-/pbi-dotnet-modular-monolith
+/skill-dotnet-modular-monolith
 ```
 
 Claude will provide:
@@ -108,7 +108,7 @@ Claude will provide:
 
 Copy the skill definition:
 ```bash
-cp pbi-dotnet-modular-monolith.md your-project/.claude/skills/
+cp skill-dotnet-modular-monolith.md your-project/.claude/skills/
 ```
 
 Or reference via git submodule.
@@ -117,7 +117,7 @@ Or reference via git submodule.
 
 ```bash
 git clone --recurse-submodules <repo-url>
-cd pbi-dotnet-modular-monolith
+cd skill-dotnet-modular-monolith
 ```
 
 ---
@@ -133,9 +133,9 @@ cd pbi-dotnet-modular-monolith
 ### Recent Commits
 
 ```
-0b2321b - docs: update index to reference pbi-dotnet-modular-monolith skill
+0b2321b - docs: update index to reference skill-dotnet-modular-monolith skill
 d1d4c6b - docs: add setup guide for skill repository management
-dc21661 - Initial commit: pbi-dotnet-modular-monolith skill with submodule dependencies
+dc21661 - Initial commit: skill-dotnet-modular-monolith skill with submodule dependencies
 ```
 
 ---
@@ -145,7 +145,7 @@ dc21661 - Initial commit: pbi-dotnet-modular-monolith skill with submodule depen
 ### Option A: Use Locally
 The skill is ready to use immediately in Claude Code:
 ```
-/pbi-dotnet-modular-monolith
+/skill-dotnet-modular-monolith
 ```
 
 ### Option B: Push to Git
@@ -157,12 +157,12 @@ git push -u origin main --recurse-submodules
 ### Option C: Integrate into Another Project
 1. Add as a submodule:
    ```bash
-   git submodule add <this-repo-url> .claude/skills/pbi-dotnet-modular-monolith
+   git submodule add <this-repo-url> .claude/skills/skill-dotnet-modular-monolith
    ```
 
 2. Reference in your CLAUDE.md:
    ```markdown
-   This project follows the [pbi-dotnet-modular-monolith](path/to/skill) standard.
+   This project follows the [skill-dotnet-modular-monolith](path/to/skill) standard.
    ```
 
 ---
@@ -177,7 +177,7 @@ git push -u origin main --recurse-submodules
 - Code patterns with examples
 - Commands and checklist
 
-### pbi-dotnet-modular-monolith.md
+### skill-dotnet-modular-monolith.md
 - Skill definition (Claude Code recognizes this format)
 - All architectural guidance
 - Pattern examples
@@ -238,7 +238,7 @@ Never:
 ## ✅ Verification Checklist
 
 - [x] README.md created with comprehensive documentation
-- [x] pbi-dotnet-modular-monolith.md skill definition created
+- [x] skill-dotnet-modular-monolith.md skill definition created
 - [x] SETUP.md created with management instructions
 - [x] .gitmodules configured with 3 external skill repos
 - [x] .gitignore created (standard .NET + IDE exclusions)
@@ -251,11 +251,11 @@ Never:
 
 ## 🎉 Success!
 
-The **pbi-dotnet-modular-monolith** skill repository is **complete, committed, and ready to use**.
+The **skill-dotnet-modular-monolith** skill repository is **complete, committed, and ready to use**.
 
 ### To Get Started
 1. Read [README.md](README.md) for overview
-2. Invoke `/pbi-dotnet-modular-monolith` in Claude Code
+2. Invoke `/skill-dotnet-modular-monolith` in Claude Code
 3. Follow [SETUP.md](SETUP.md) to manage dependencies
 
 **Last Updated**: 2026-06-29

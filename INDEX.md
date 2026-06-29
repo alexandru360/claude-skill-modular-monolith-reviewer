@@ -16,7 +16,7 @@
 ## 🏗️ Architecture Foundation
 
 - **[CLAUDE.md](./CLAUDE.md)** — Universal .NET Modular Monolith template (START HERE for any new project)
-- **[pbi-dotnet-modular-monolith.md](./pbi-dotnet-modular-monolith.md)** — Universal .NET Architecture Standard (Modular Monolith + DDD + Event-Driven)
+- **[skill-dotnet-modular-monolith.md](./skill-dotnet-modular-monolith.md)** — Universal .NET Architecture Standard (Modular Monolith + DDD + Event-Driven)
 - **[README.md](./README.md)** — Skill documentation and overview
 
 ---
@@ -127,7 +127,7 @@
 ## 🎯 Quick Start by Task
 
 **Building a new .NET API?**
-→ Start with `CLAUDE.md` → `/pbi-dotnet-modular-monolith` → [csharp-coding-standards](../bi-layouting-engine-skills/skills/csharp-coding-standards/SKILL.md)
+→ Start with `CLAUDE.md` → `/skill-dotnet-modular-monolith` → [csharp-coding-standards](../bi-layouting-engine-skills/skills/csharp-coding-standards/SKILL.md)
 
 **Need async patterns?**
 → [csharp-concurrency-patterns](../bi-layouting-engine-skills/skills/csharp-concurrency-patterns/SKILL.md)

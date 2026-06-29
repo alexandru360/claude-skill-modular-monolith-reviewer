@@ -1,10 +1,10 @@
-# Quick Reference — pbi-dotnet-modular-monolith
+# Quick Reference — skill-dotnet-modular-monolith
 
 ## 📌 What Is This?
 
 A **Claude skill repository** for building clean, modular .NET projects using DDD + strict architectural rules.
 
-**Invoke in Claude Code**: `/pbi-dotnet-modular-monolith`
+**Invoke in Claude Code**: `/skill-dotnet-modular-monolith`
 
 ---
 
@@ -13,7 +13,7 @@ A **Claude skill repository** for building clean, modular .NET projects using DD
 | File | Purpose | Read Time |
 |------|---------|-----------|
 | **[README.md](README.md)** | Complete skill overview | 5 min |
-| **[pbi-dotnet-modular-monolith.md](pbi-dotnet-modular-monolith.md)** | Skill definition (Claude reads this) | Reference |
+| **[skill-dotnet-modular-monolith.md](skill-dotnet-modular-monolith.md)** | Skill definition (Claude reads this) | Reference |
 | **[SETUP.md](SETUP.md)** | How to clone, manage submodules | 3 min |
 | **[CLAUDE.md](CLAUDE.md)** | Project standards (existing) | Reference |
 
@@ -23,17 +23,17 @@ A **Claude skill repository** for building clean, modular .NET projects using DD
 
 ### Use the Skill
 ```
-Type in Claude Code: /pbi-dotnet-modular-monolith
+Type in Claude Code: /skill-dotnet-modular-monolith
 ```
 
 ### Clone the Repo
 ```bash
-git clone --recurse-submodules https://github.com/your-org/pbi-dotnet-modular-monolith.git
+git clone --recurse-submodules https://github.com/your-org/skill-dotnet-modular-monolith.git
 ```
 
 ### Copy to Your Project
 ```bash
-cp pbi-dotnet-modular-monolith.md your-project/.claude/skills/
+cp skill-dotnet-modular-monolith.md your-project/.claude/skills/
 ```
 
 ---
@@ -197,7 +197,7 @@ public sealed class Feature : AggregateRoot
 ## ❓ FAQ
 
 **Q: Can I use this without git submodules?**  
-A: Yes. Copy `pbi-dotnet-modular-monolith.md` to your project. Submodules are optional helpers.
+A: Yes. Copy `skill-dotnet-modular-monolith.md` to your project. Submodules are optional helpers.
 
 **Q: How often do submodules update?**  
 A: Manually — `git submodule update --remote`. No automatic upgrades.
@@ -215,10 +215,10 @@ A: Yes. Fork it, edit, and use locally. Or PR improvements upstream.
 1. **Skill overview** → Read [README.md](README.md)
 2. **Cloning issues** → Check [SETUP.md](SETUP.md)
 3. **Architecture questions** → See [CLAUDE.md](CLAUDE.md) or invoke the skill
-4. **Code patterns** → Review [pbi-dotnet-modular-monolith.md](pbi-dotnet-modular-monolith.md)
+4. **Code patterns** → Review [skill-dotnet-modular-monolith.md](skill-dotnet-modular-monolith.md)
 
 ---
 
 **Last Updated**: 2026-06-29  
 **Repository**: c:\Dev\_skills\_bi-layouting-engine  
-**Skill Command**: `/pbi-dotnet-modular-monolith`
+**Skill Command**: `/skill-dotnet-modular-monolith`

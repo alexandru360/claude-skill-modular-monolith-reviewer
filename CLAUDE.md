@@ -2,7 +2,7 @@
 
 **Use This For**: ANY new ASP.NET Core 10 project you create
 **Architecture**: Modular Monolith with DDD + Event-Driven Communication  
-**Reference**: `/pbi-dotnet-modular-monolith` (universal .NET standard for ALL projects)
+**Reference**: `/skill-dotnet-modular-monolith` (universal .NET standard for ALL projects)
 
 ---
 
@@ -504,7 +504,7 @@ public class FeatureEndpointTests : IAsyncLifetime
 
 ## When in Doubt
 
-1. **Check the universal standard**: `/pbi-dotnet-modular-monolith`
+1. **Check the universal standard**: `/skill-dotnet-modular-monolith`
 2. **Apply YAGNI/KISS/DRY/SPOT**: Simplicity wins every time
 3. **Inject abstractions**: Never direct service calls between modules
 4. **Add structured logging**: Context + decision points

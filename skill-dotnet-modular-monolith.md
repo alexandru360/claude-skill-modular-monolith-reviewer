@@ -1,4 +1,4 @@
-# pbi-dotnet-modular-monolith
+# skill-dotnet-modular-monolith
 
 > Universal .NET Architecture Standard — Modular Monolith with DDD + Event-Driven Communication
 

@@ -1,4 +1,4 @@
-# pbi-dotnet-modular-monolith
+# skill-dotnet-modular-monolith
 
 > **Universal .NET Architecture Standard for Modular Monoliths**
 
@@ -17,7 +17,7 @@ This skill provides:
 
 ## When to Use This Skill
 
-Invoke `/pbi-dotnet-modular-monolith` when:
+Invoke `/skill-dotnet-modular-monolith` when:
 
 - Creating a **new ASP.NET Core 10+ project** from scratch
 - Establishing **architecture patterns** for a team
@@ -99,7 +99,7 @@ These are included as git submodules (no duplication).
 
 1. **Invoke the skill**:
    ```
-   /pbi-dotnet-modular-monolith
+   /skill-dotnet-modular-monolith
    ```
 
 2. **Provide project details**:
@@ -208,9 +208,9 @@ public static class FeatureEndpoints
 ## File Organization
 
 ```
-pbi-dotnet-modular-monolith/
+skill-dotnet-modular-monolith/
 ├── README.md                    ← This file
-├── pbi-dotnet-modular-monolith.md  ← Skill definition
+├── skill-dotnet-modular-monolith.md  ← Skill definition
 ├── templates/                   ← Reusable code snippets
 │   ├── project-structure.md
 │   ├── service-layer.cs

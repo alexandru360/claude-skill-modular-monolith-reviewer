@@ -1,8 +1,8 @@
-# Setup Guide for pbi-dotnet-modular-monolith Skill Repository
+# Setup Guide for skill-dotnet-modular-monolith Skill Repository
 
 ## Overview
 
-This repository contains the **pbi-dotnet-modular-monolith** skill — a comprehensive Claude Code skill for building clean, modular ASP.NET Core projects with DDD patterns and strict architectural boundaries.
+This repository contains the **skill-dotnet-modular-monolith** skill — a comprehensive Claude Code skill for building clean, modular ASP.NET Core projects with DDD patterns and strict architectural boundaries.
 
 The skill repository is designed as a **reference implementation** that depends on 3 external skill repositories via git submodules (no code duplication).
 
@@ -11,8 +11,8 @@ The skill repository is designed as a **reference implementation** that depends 
 ### 1. Clone with Submodules
 
 ```bash
-git clone --recurse-submodules https://github.com/your-org/pbi-dotnet-modular-monolith.git
-cd pbi-dotnet-modular-monolith
+git clone --recurse-submodules https://github.com/your-org/skill-dotnet-modular-monolith.git
+cd skill-dotnet-modular-monolith
 ```
 
 If you cloned without `--recurse-submodules`, initialize them now:
@@ -39,9 +39,9 @@ Expected output:
 ### 3. Understand the Structure
 
 ```
-pbi-dotnet-modular-monolith/
+skill-dotnet-modular-monolith/
 ├── README.md                           ← Overview (start here)
-├── pbi-dotnet-modular-monolith.md      ← Skill definition for Claude Code
+├── skill-dotnet-modular-monolith.md      ← Skill definition for Claude Code
 ├── CLAUDE.md                           ← Project standards (YAGNI, KISS, DRY, SPOT, SoC)
 ├── .gitmodules                         ← Submodule configuration
 │
@@ -64,7 +64,7 @@ pbi-dotnet-modular-monolith/
 Invoke the skill directly:
 
 ```
-/pbi-dotnet-modular-monolith
+/skill-dotnet-modular-monolith
 ```
 
 Claude will provide:
@@ -78,14 +78,14 @@ Claude will provide:
 
 **Option A: Copy the Skill Definition**
 
-Copy `pbi-dotnet-modular-monolith.md` into your project's `.claude/skills/` folder.
+Copy `skill-dotnet-modular-monolith.md` into your project's `.claude/skills/` folder.
 
 **Option B: Reference via Git**
 
 If your project uses git submodules, add this repo as a dependency:
 
 ```bash
-git submodule add https://github.com/your-org/pbi-dotnet-modular-monolith.git .claude/skills/pbi-dotnet-modular-monolith
+git submodule add https://github.com/your-org/skill-dotnet-modular-monolith.git .claude/skills/skill-dotnet-modular-monolith
 ```
 
 Then reference it from your CLAUDE.md:
@@ -93,7 +93,7 @@ Then reference it from your CLAUDE.md:
 ```markdown
 # Your Project
 
-This project follows the [pbi-dotnet-modular-monolith](/path/to/skill/pbi-dotnet-modular-monolith.md) standard.
+This project follows the [skill-dotnet-modular-monolith](/path/to/skill/skill-dotnet-modular-monolith.md) standard.
 ```
 
 ## Updating Submodules
@@ -120,7 +120,7 @@ git commit -m "chore: update dotnet-skills to latest"
 
 ### Adding New Content
 
-1. **Skill definition**: Edit `pbi-dotnet-modular-monolith.md`
+1. **Skill definition**: Edit `skill-dotnet-modular-monolith.md`
 2. **Documentation**: Update `README.md`
 3. **Project standards**: Reference `CLAUDE.md`
 4. **Examples/Templates**: Add to `.claude/skills/` or inline in markdown
@@ -142,7 +142,7 @@ git commit -m "chore: update <submodule-name> dependency"
 
 Before merging:
 
-1. Copy `pbi-dotnet-modular-monolith.md` to a test project
+1. Copy `skill-dotnet-modular-monolith.md` to a test project
 2. Invoke it in Claude Code
 3. Verify templates generate valid .NET project structure
 4. Check that the architecture rules are clear and actionable
@@ -227,7 +227,7 @@ jobs:
 A: Submodules keep skills DRY — changes upstream automatically propagate, and you avoid maintaining duplicate code across projects.
 
 **Q: Can I use this skill without cloning the submodules?**  
-A: Yes, but you lose access to the integrated helpers. The core skill definition (`pbi-dotnet-modular-monolith.md`) works standalone.
+A: Yes, but you lose access to the integrated helpers. The core skill definition (`skill-dotnet-modular-monolith.md`) works standalone.
 
 **Q: How do I reference a submodule from my project?**  
 A: Import it in your CLAUDE.md or link to its skill definition. Submodules are development-time dependencies, not production code.
@@ -239,5 +239,5 @@ A: Pin to a specific commit in `.gitmodules`, or check the submodule's CHANGELOG
 
 **For more details**:
 - Read [README.md](README.md) for skill overview
-- Check [pbi-dotnet-modular-monolith.md](pbi-dotnet-modular-monolith.md) for the skill definition
+- Check [skill-dotnet-modular-monolith.md](skill-dotnet-modular-monolith.md) for the skill definition
 - Review [CLAUDE.md](CLAUDE.md) for project standards
