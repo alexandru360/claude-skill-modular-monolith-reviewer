@@ -90,10 +90,10 @@ Endpoint → IService (Abstraction) → Service → IRepository → Repository �
 This skill builds on and references:
 
 - **[claude-git-pr-skill](https://github.com/aidankinzett/claude-git-pr-skill)** — PR creation and git workflow automation
-- **[dotnet-skills](https://github.com/Aaronontheweb/dotnet-skills.git)** — .NET CLI helpers and build utilities
-- **[code-review-skill](https://github.com/awesome-skills/code-review-skill.git)** — Code review and quality checks
+- **[dotnet-skills](https://github.com/Aaronontheweb/dotnet-skills)** — Comprehensive .NET development skills (Akka.NET, Aspire, C# standards, testing frameworks)
+- **[code-review-skill](https://github.com/awesome-skills/code-review-skill)** — Code review and quality checks
 
-These are included as git submodules (no duplication).
+These are included as git submodules under `lib/` (no code duplication). They are also registered as `extraKnownMarketplaces` in `.claude/settings.json` for seamless integration.
 
 ## Quick Start
 
@@ -243,6 +243,36 @@ When updating this skill:
 ## License
 
 This skill is part of the PBI project ecosystem and follows the same licensing terms.
+
+---
+
+## External Repositories Used
+
+This project integrates the following external repositories as git submodules and Claude Code marketplaces:
+
+| Repository | Purpose | Location | Source |
+|------------|---------|----------|--------|
+| **[dotnet-skills](https://github.com/Aaronontheweb/dotnet-skills)** | Comprehensive .NET development skills covering Akka.NET, Aspire, C# patterns, testing, performance, serialization, and specialized .NET tooling (BenchmarkDotNet, DocFX, etc.) | `lib/dotnet-skills/` | Git submodule + local marketplace |
+| **[claude-git-pr-skill](https://github.com/aidankinzett/claude-git-pr-skill)** | Git workflow automation and PR creation utilities | `lib/claude-git-pr-skill/` | Git submodule |
+| **[code-review-skill](https://github.com/awesome-skills/code-review-skill)** | Automated code review and quality assessment | `lib/code-review-skill/` | Git submodule |
+
+### Adding/Updating Submodules
+
+To initialize or update all submodules:
+
+```bash
+# Initialize all submodules
+git submodule update --init --recursive
+
+# Update to latest versions
+git submodule update --remote --recursive
+```
+
+### Integration Points
+
+- **dotnet-skills** is exposed via `.claude/settings.json` as a local marketplace (`dotnet-skills`), making all 45+ skills and 6 specialized agents available in Claude Code
+- **claude-git-pr-skill** provides automation for the `/create-pr` and `/ship-changes` workflows
+- **code-review-skill** powers the `/code-review` and `/checklist` quality checks
 
 ---
 
